@@ -29,6 +29,7 @@ module Travis::Yaml
     require 'travis/yaml/nodes/os'
     require 'travis/yaml/nodes/virtual_env'
     require 'travis/yaml/nodes/ruby'
+    require 'travis/yaml/nodes/rvm'
     require 'travis/yaml/nodes/jdk'
     require 'travis/yaml/nodes/env'
     require 'travis/yaml/nodes/matrix'

@@ -6,12 +6,12 @@ module Travis::Yaml
       map :language, required: true
       map :sudo, to: Scalar[:bool], required: false
       map :bundler_args, to: BundlerArgs
-      map :deploy, :ruby, :os, :compiler, :git, :jdk, :virtualenv, :matrix, :env, :notifications, :branches, :cache, :addons, :android
+      map :deploy, :ruby, :rvm, :os, :compiler, :git, :jdk, :virtualenv, :matrix, :env, :notifications, :branches, :cache, :addons, :android
       map :lein, :otp_release, :go, :ghc, :haxe, :xcode_sdk, :xcode_scheme, :perl, :php, :python, :services, :gemfile,
         :dart, :scala, :d, :crystal, :smalltalk, to: VersionList
       map :podfile, to: Version
       map :node_js, to: VersionList[/^((iojs)|(iojs\-v\d+\.\d+(\.\d+)?)|(\d+(\.\d+(\.\d+)?)?)|stable|node)$/]
-      map :rvm, to: :ruby
+      # map :rvm, to: :ruby
       map :otp, to: :otp_release
       map :node, to: :node_js
       map :virtual_env, to: :virtualenv
