@@ -5,7 +5,7 @@ module Travis::Yaml
     EXPAND_KEYS = [
       :compiler, :crystal, :d, :dart, :gemfile, :ghc, :go, :haxe, :jdk, :lein,
       :node_js, :otp_release, :perl, :php, :python, :ruby, :scala, :xcode_scheme,
-      :xcode_sdk, :os , :smalltalk
+      :xcode_sdk, :os , :smalltalk, :rvm
     ]
 
     KEYS = EXPAND_KEYS + [:env]
@@ -35,7 +35,7 @@ module Travis::Yaml
 
     def axes
       @axes ||= KEYS.select do |key|
-        next true if values_for(key) and values_for(key).size > 1
+        next true if values_for(key) and values_for(key).size >= 1
         root.matrix.include.any? { |i| i[key] } if root.matrix and root.matrix.include
       end
     end
